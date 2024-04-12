@@ -26,7 +26,7 @@ import {
   ChevronsLeft,
   ChevronsRight,
 } from "lucide-react";
-import { AttendeeFilterInput } from "../attendee-filter-input";
+import { SearchInput } from "../search-input";
 import { Attendee } from "@/data/attendee-data";
 
 interface DataTableProps {
@@ -84,8 +84,9 @@ export function DataTable({ columns, data }: DataTableProps) {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex items-end justify-between">
-        <AttendeeFilterInput
+        <SearchInput
           title="Participantes"
+          placeholder="Buscar participante..."
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(e) =>
             table.getColumn("name")?.setFilterValue(e.target.value)
@@ -97,7 +98,7 @@ export function DataTable({ columns, data }: DataTableProps) {
         </div>
       </div>
       <div className="rounded-md border">
-        <Table>
+        <Table className="bg-background">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>

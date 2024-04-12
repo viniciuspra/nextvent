@@ -17,6 +17,12 @@ export default {
       },
     },
     extend: {
+      boxShadow: {
+        "card-shadow": "-2px 2px 1px 1px",
+      },
+      backgroundImage: {
+        "svg-background": "url('@/assets/bg-pattern.svg')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

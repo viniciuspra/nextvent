@@ -1,7 +1,7 @@
 import { Skeleton } from "@/components/ui/skeleton";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import { FilterInputSkeleton } from "@/components/skeleton/filter-input-skeleton";
+import { SearchInputSkeleton } from "@/components/skeleton/search-input-skeleton";
 
 import {
   ArrowUpDown,
@@ -15,7 +15,7 @@ import {
 export function AttendeeTableSkeleton() {
   return (
     <div className="flex flex-col gap-5">
-      <FilterInputSkeleton />
+      <SearchInputSkeleton withSpan />
       <div className="rounded-md border">
         <table className="min-w-full divide-y">
           <thead>
