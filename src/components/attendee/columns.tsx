@@ -5,9 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import "dayjs/locale/pt-br";
 dayjs.extend(relativeTime);
-dayjs.locale("pt-br");
 
 import { CellButton } from "@/components/attendee/columns-actions/cell-button";
 import { HeaderButton } from "@/components/attendee/columns-actions/header-button";

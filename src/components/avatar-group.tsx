@@ -1,3 +1,4 @@
+import { twMerge } from "tailwind-merge";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 interface AvatarGroupProps {
@@ -6,13 +7,14 @@ interface AvatarGroupProps {
     fallback: string;
   }[];
   maxToShow: number;
+  className?: string;
 }
 
-export function AvatarGroup({ avatars, maxToShow }: AvatarGroupProps) {
+export function AvatarGroup({ avatars, maxToShow, className }: AvatarGroupProps) {
   const visibleAvatars = avatars.slice(0, maxToShow);
 
   return (
-    <div className="flex space-x-[-12px] rtl:space-x-reverse">
+    <div className={twMerge("flex space-x-[-12px] rtl:space-x-reverse", className)}>
       {visibleAvatars.map((avatar, index) => (
         <Avatar key={index} className="border-4 border-background w-9 h-9">
           <AvatarImage src={avatar.src} />
